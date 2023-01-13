@@ -42,7 +42,11 @@ func Provider() *schema.Provider {
 			"freeipa_user_group_membership": resourceFreeIPAUserGroupMembership(),
 		},
 
-		DataSourcesMap: map[string]*schema.Resource{},
+		DataSourcesMap: map[string]*schema.Resource{
+			"freeipa_user":                  dataFreeIPAUser(),
+			// "freeipa_group":                 dataFreeIPAGroup(),
+			// "freeipa_user_group_membership": dataFreeIPAUserGroupMembership(),
+		},
 
 		ConfigureFunc: providerConfigure,
 	}
